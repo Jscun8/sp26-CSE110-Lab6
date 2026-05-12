@@ -97,12 +97,13 @@ function initFormHandler() {
 		saveRecipesToStorage(recipesArray);
 	});
 	// Get a reference to the "Clear Local Storage" button
-	const clearButton = document.querySelector('.danger')
+	const clearButton = document.querySelector('.danger');
 	// Add a click event listener to clear local storage button
 	// Inside Event Listener: We clear the local storage and delete the contents of <main>
 	clearButton.addEventListener('click', function() {
-		localStorage.clear();
-		// can also just do localStorage.removeItem('recipes'); to remove only this key in the localStorage
+		// to remove only the key 'recipes' in the localStorage
+		localStorage.removeItem('recipes'); 
+		// can also just do localStorage.clear(); however this clears everything in localStorage
 		const main = document.querySelector('main');
 		main.innerHTML = '';
 	});
